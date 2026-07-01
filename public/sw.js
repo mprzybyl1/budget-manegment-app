@@ -1,11 +1,11 @@
 // Service worker: cache "app shell" dla szybkiego startu + dzialania offline.
 // API nigdy nie jest cache'owane (zawsze swieze dane / poprawne 401).
-const CACHE = 'budzet-v9';
+const CACHE = 'budzet-v10';
 const SHELL = [
   '/',
   '/index.html',
-  '/styles.css?v=9',
-  '/app.js?v=9',
+  '/styles.css?v=10',
+  '/app.js?v=10',
   '/vendor/chart.min.js',
   '/manifest.webmanifest',
   '/icons/icon-192.png',

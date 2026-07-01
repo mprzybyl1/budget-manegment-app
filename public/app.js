@@ -940,7 +940,30 @@ function openRepayModal(card) {
   openModal('Spłata karty', body);
 }
 
-const EMOJIS = ['🛒','🍽️','🚗','🏠','💡','💊','🎬','👕','📱','📦','💰','➕','🎁','✈️','🐶','💄','📚','🍺','⛽','🏋️','☕','🎓'];
+const EMOJIS = [
+  // Jedzenie i napoje
+  '🛒','🍽️','🍔','🍕','🍜','🥗','🍣','🥐','🍞','🥩','🧀','🍎','🥦','🍺','🍷','☕','🧋','🥤','🍫','🍦','🎂',
+  // Transport
+  '🚗','⛽','🚕','🚌','🚆','🚲','🛴','✈️','🅿️','🔧',
+  // Dom i rachunki
+  '🏠','💡','🔥','💧','🚿','🛋️','🧹','🧺','🔌','📶','🛠️','🪑',
+  // Zdrowie i uroda
+  '💊','🏥','🦷','👓','💇','💄','🧴','🧼','🏋️','🧘','🩺',
+  // Zakupy i ubrania
+  '👕','👗','👟','👜','⌚','💍','🧢','🕶️','🛍️',
+  // Rozrywka i hobby
+  '🎬','🎮','🎵','🎧','🎸','📚','🎨','🎟️','🎳','⚽','🎯','🎲','📷','🌱',
+  // Technologia i praca
+  '📱','💻','🖥️','⌨️','🖨️','📦','✉️','📎','🖊️',
+  // Finanse
+  '💰','💵','💳','🏦','📈','📉','🪙','🧾','➕','➖',
+  // Rodzina, dzieci, zwierzęta
+  '🧒','👶','🍼','🐶','🐱','🐾','🎓','🎒',
+  // Podróże i prezenty
+  '🧳','🏨','🏖️','⛱️','🗺️','🎁','🎉','🌍',
+  // Inne
+  '🔑','🚬','💸','❓','⭐','❤️','🔖',
+];
 function openCategoryModal(c = null) {
   const name = el('input', { type: 'text', placeholder: 'Nazwa kategorii', value: c ? c.name : '' });
   let emoji = c ? c.emoji : '📦';

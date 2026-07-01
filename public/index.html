@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1" />
+  <meta name="theme-color" content="#4f46e5" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Budżet" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="/icons/icon-180.png" />
+  <link rel="stylesheet" href="/styles.css?v=9" />
+  <title>Budżet</title>
+</head>
+<body>
+  <!-- Ekran logowania -->
+  <div id="login" class="login hidden">
+    <form id="login-form" class="login-card">
+      <div class="login-logo">💰</div>
+      <h1>Budżet</h1>
+      <p class="muted">Zaloguj się, aby kontynuować</p>
+      <input id="login-username" type="text" autocomplete="username" placeholder="Login" required />
+      <input id="login-password" type="password" autocomplete="current-password" placeholder="Hasło" required />
+      <label class="remember"><input id="login-remember" type="checkbox" checked /> Zapamiętaj mnie</label>
+      <button type="submit" class="btn-primary">Zaloguj</button>
+      <div id="login-error" class="error"></div>
+    </form>
+  </div>
+
+  <!-- Aplikacja -->
+  <div id="app" class="app hidden">
+    <header class="topbar">
+      <span id="view-title">Pulpit</span>
+      <button id="month-pill" class="month-pill" hidden></button>
+    </header>
+
+    <main id="view"></main>
+
+    <button id="fab" class="fab" aria-label="Dodaj wydatek">+</button>
+
+    <nav class="tabbar">
+      <button class="tab active" data-tab="dashboard"><span>🏠</span>Pulpit</button>
+      <button class="tab" data-tab="transactions"><span>📋</span>Wydatki</button>
+      <button class="tab" data-tab="shopping"><span>🛒</span>Zakupy</button>
+      <button class="tab" data-tab="analytics"><span>📊</span>Analiza</button>
+      <button class="tab" data-tab="settings"><span>⚙️</span>Konta</button>
+    </nav>
+  </div>
+
+  <!-- Modal (formularze) -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-sheet">
+      <div class="modal-head">
+        <h2 id="modal-title">—</h2>
+        <button class="icon-btn" data-close>✕</button>
+      </div>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="/vendor/chart.min.js"></script>
+  <script src="/app.js?v=9"></script>
+</body>
+</html>

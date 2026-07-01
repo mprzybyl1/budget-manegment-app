@@ -1,0 +1,19 @@
+[Unit]
+Description=Budzet - osobisty menedzer budzetu (Fastify + SQLite)
+After=network-online.target docker.service
+Wants=network-online.target
+# Bind na 172.18.0.1 (brama sieci docker evensteven_default) wymaga, by docker wstal.
+Requires=docker.service
+
+[Service]
+Type=simple
+WorkingDirectory=/root/claude/projects/budzet/app
+EnvironmentFile=/root/claude/projects/budzet/app/budzet.env
+ExecStart=/usr/bin/node server.js
+Restart=on-failure
+RestartSec=3
+# Daj czas, az sieci docker beda gotowe po reboocie.
+StartLimitIntervalSec=60
+
+[Install]
+WantedBy=multi-user.target

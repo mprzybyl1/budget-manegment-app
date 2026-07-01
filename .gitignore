@@ -1,0 +1,17 @@
+# Zależności
+node_modules/
+
+# Baza danych (dane finansowe + hash hasła) — NIGDY do repo
+*.db
+*.db-wal
+*.db-shm
+
+# Sekrety
+*.env
+
+# Kopie zapasowe / logi
+backups/
+*.log
+
+# System
+.DS_Store
